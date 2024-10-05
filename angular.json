@@ -35,6 +35,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": [],
@@ -46,6 +47,13 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environments.ts",
+                  "with": "src/environments/environments.prod.ts"
+
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -69,13 +77,17 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "proxyConfig": "proxyconfig.json"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "crudAngular:build:production"
             },
             "development": {
-              "buildTarget": "crudAngular:build:development"
+              "buildTarget": "crudAngular:build:development",
+              "proxyConfig": "proxyconfig.json"
             }
           },
           "defaultConfiguration": "development"
@@ -106,5 +118,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

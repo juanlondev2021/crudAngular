@@ -1,0 +1,8 @@
+{
+  "api/products/*":{
+    "target": "https://node-rest-server-products.onrender.com",
+    "secure": "false",
+    "logLevel": "debug",
+    "changeOrigin": "true"
+  }
+}

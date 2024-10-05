@@ -1,0 +1,31 @@
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> {{ product.nombre }} </mat-card-title>
+  </mat-card-header>
+
+  <!--Imagen aqui-->
+  <img  [src]=" product.img " t="">
+  <mat-card-content class="mt-2">
+    <h4> {{ product.precio }} </h4>
+
+    <p>{{ product.descripcion }}</p>
+    <br>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions>
+    <button mat-button mat-raised color="primary" [routerLink]="['/products/edit', product._id]">
+      <mat-icon>edit</mat-icon>
+      Editar
+    </button>
+
+    <span class="spacer"></span>
+
+    <button mat-button mat-raised  [routerLink]="['/products/', product._id]">
+      <mat-icon>more_horiz</mat-icon>
+      Más
+    </button>
+  </mat-card-actions>
+</mat-card>
